@@ -1,0 +1,36 @@
+body
+{
+	font-size: 12px;
+	font-family: Verdana, Helvetica, SunSans-Regular, Sans-Serif; 
+	padding:10px;
+	margin:0px;
+	text-align: center;
+}
+
+#content
+{ 	
+	text-align: left;
+	vertical-align: middle;	
+	margin: 0px auto;
+	padding: 0px;
+	width: 600px;
+	border: 1px dashed;
+}
+			
+p, h1, pre
+{
+	margin: 0px; 
+	padding: 2px 5px;
+}
+
+h1
+{
+	font-size: 11px;
+	text-transform:uppercase;
+}
+
+a
+{
+	font-size: 11px;
+	text-decoration: none; 
+}
