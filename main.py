@@ -3,18 +3,45 @@ from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 import os
 
-class MainHandler(webapp.RequestHandler):
-    def get(self):
-        template_values = {
-        }
-
-        path = os.path.join(os.path.dirname(__file__), 'pages/teaser-home.html')
+class BaseHandler(webapp.RequestHandler):
+    def render(self, filepath, template_values):
+        path = os.path.join(os.path.dirname(__file__), filepath)
 	html = template.render(path, template_values)
 
-	self.response.out.write(html.decode("utf-8"))
+	return html.decode("utf-8")
+    
+    def get(self, template_values):
+        self.response.out.write(self.render('django/index.html', template_values))
+
+class MainHandler(BaseHandler):
+    def get(self):
+        template_values = {
+            "content": BaseHandler.render(self, 'django/main-content.html', {}),
+        }
+
+        BaseHandler.get(self, template_values)
+
+class AboutHandler(BaseHandler):
+    def get(self):
+        template_values = {
+            "content": BaseHandler.render(self, 'django/about-content.html', {})
+        }
+
+        BaseHandler.get(self, template_values)
+
+class TeamHandler(BaseHandler):
+    def get(self):
+        template_values = {
+            "content": BaseHandler.render(self, 'django/team-content.html', {}),
+            "header_links": '<link rel="stylesheet" type="text/css" href="css/team.css" />'
+        }
+
+        BaseHandler.get(self, template_values)
 
 def main():
-    application = webapp.WSGIApplication([('.*', MainHandler)],
+    application = webapp.WSGIApplication([('/about', AboutHandler),
+                                          ('/team', TeamHandler),
+                                          ('.*', MainHandler)],
                                          debug=True)
     util.run_wsgi_app(application)
 
