@@ -24,7 +24,8 @@ class MainHandler(BaseHandler):
 class AboutHandler(BaseHandler):
     def get(self):
         template_values = {
-            "content": BaseHandler.render(self, 'django/about-content.html', {})
+            "content": BaseHandler.render(self, 'django/about-content.html', {}),
+            "header_links": '<link rel="stylesheet" type="text/css" href="css/about.css" />'
         }
 
         BaseHandler.get(self, template_values)
