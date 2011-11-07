@@ -1,38 +1,36 @@
 <html>
-<head>
-<title>Placeholder Softare || Home</title>
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
-{{ header_links }}
-</head>
+	<head>
+		<title>Placeholder Softare</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon'/ >
+		{{ header_links }}
+	</head>
 
-<body bgcolor="black">
-<div class="container">
-	<div class="title">
-		<a href="/">
-			<img src="images/title.png">
-		</a>
-	</div>
-	
-	<div class="bar">
-		<p><a href="/">HOME</a> || <a href="/about">ABOUT</a> || <a href="/team">TEAM</a></p>
-	</div>
+	<body>
+		<div class="container">
+			<div class="title">
+				<a href="/"><img src="images/title.png"></a>
+			</div>
+			
+			<div class="bar">
+				<p><div class="bar-content"><a href="/">HOME</a> || <a href="/about">ABOUT</a><!-- || <a href="/team">TEAM</a> --></div></p>
+			</div>
 
-	<div class="social">
-		<br>
-		<a href="https://twitter.com/#!/PlaceholderSoft" target="_blank"><img src="images/twitter.png" align="middle"></a>
-		<img src="images/facebook.png" align="middle"> <!--Put this line inside a <a href="[web address]"></a> to link.-->
-		<a href="http://placeholder-software.tumblr.com/" target="_blank"><img src="images/tumblr.png" align="middle"></a>
-		<a href="http://feeds.feedburner.com/PlaceholderSoftware"><img src="images/rss.png" align="middle"></a>
-	</div>
+			<div class="social">
+				<br>
+				<a href="https://twitter.com/#!/PlaceholderSoft" target="_blank"><img src="images/twitter.png" align="middle"></a>
+				<img src="images/facebook.png" align="middle"> <!--Put this line inside a <a href="[web address]"></a> to link.-->
+				<a href="http://placeholder-software.tumblr.com/" target="_blank"><img src="images/tumblr.png" align="middle"></a>
+				<a href="http://feeds.feedburner.com/PlaceholderSoftware"><img src="images/rss.png" align="middle"></a>
+			</div>
 
-	<div class="content">
-		{{ content }}
-	</div>
+			<div class="content">
+				{{ content }}
+			</div>
 
-	<div class="bottom">
-		<p><br>WEBSITE DESIGNED BY <a href="http://www.twitter.com/mark_billy">MARK RICHARDS</a></p>
-	</div>
-</div>
-</body>
+			<div class="bottom">
+				<p><div class="footer-content">WEBSITE DESIGNED AND BUILT BY <a href="http://www.twitter.com/mark_billy">MARK RICHARDS</a></div></p>
+			</div>
+		</div>
+	</body>
 </html>
